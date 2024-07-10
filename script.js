@@ -1,13 +1,4 @@
-//document é um objeto que contém a funcionalidade querySelector (query: pesquisa / selector: seletor), que busca e atribui o o elemento html com o seletor mencionado a uma variável em js
-
-const section = document.querySelector('section');
-
-// estrutura de dados: objeto {}
-//ele recebe uma propriedade e um valor (nome : 'Bruna')
-//para colocar mais de uma propriedade, basta acrescentar uma vírgula 
-//para acessar algum valor de um objeto, basta colocar o nome do objeto seguido de um ponto e o nome da propriedade que contém o valor desejado
-//ex: atividade.nome ---> irá mostrar Estudar a beira mar
-
+//objet {}
 const atividade = {
     nome : 'Estudar a beira mar',
     data : new Date('2024-07-10 07:00'),
@@ -15,9 +6,8 @@ const atividade = {
 }
 
 // lista, array, vetor = []
-// armazena todo tipo de dado em js 
-
-const listaAtividades = [
+//lista de atividades (simulação de um banco de dados)
+let listaAtividades = [
     atividade,
     {
         nome: 'Academia',
@@ -31,8 +21,25 @@ const listaAtividades = [
     }
 ]
 
-//função - arrow function (forma resumida)
-// = function () {}
+//listaAtividades = []
+
+//formatação da data
+const formatador = (data) => {
+    return {
+        dia: {
+            numerico: dayjs(data).format('DD'),
+            extenso: {
+                curto: dayjs(data).format('ddd'),
+                longo: dayjs(data).format('dddd')
+            }
+        },
+        mes: dayjs(data).format('MMMM'),
+        hora: dayjs(data).format('HH:mm')
+    }
+}
+
+
+//função para criar as atividades
 const criarAtividades = (att) => {
     let input = `<input type="checkbox" `
     
@@ -41,26 +48,36 @@ const criarAtividades = (att) => {
     } 
     input += `>`;
 
+    const formatar = formatador(att.data)
+
     return ` 
    <div>
         ${input}
         <span>${att.nome}</span>
-        <time>${att.data}</time>
+        <time>${formatar.dia.extenso.longo},
+        dia ${formatar.dia.numerico}
+        de ${formatar.mes}
+        às ${formatar.hora}
+        </time>
     </div>
    `;
 }
 
-//innerHTML substitui/acrescenta um conteúdo ao seletor do documento HTML contido na variável
+//função para atualizar a visualização das atividades
+const atualizarAtividades = () => {
+    const section = document.querySelector('section');
+    
+    //verificar se a lista está vazia
+    if (listaAtividades.length == 0) {
+        section.innerHTML = '<p>Nenhuma atividade cadastrada.</p>'
+        return
+    }
+    
+    for (let i in listaAtividades) {
+        section.innerHTML += criarAtividades(listaAtividades[i]);
+    }
 
-//duas formas de acessar e exibir os objetos da lista
-
-//nesse a variável item assume o valor do objeto, e a função destrincha esses valores para a exibição
-
-// for (let item of listaAtividades) {
-//     section.innerHTML += criarAtividades(item);
-// }
-
-// e nesse a variável i assume os indices da lista de atividades, e a função recebe cada objeto localizado nos indices para destrinchar a visualização
-for (let i in listaAtividades) {
-    section.innerHTML += criarAtividades(listaAtividades[i]);
 }
+
+atualizarAtividades()
+
