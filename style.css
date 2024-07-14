@@ -73,6 +73,8 @@ input, select, button {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    cursor: pointer;
 }
 
 .campo:focus-within {
@@ -89,5 +91,72 @@ button {
     color: #1A2E05;
     font-size: 16px;
     font-weight: 500;
+
+    cursor: pointer;
 }
+
+/* main */
+
+main {
+    margin-top: 32px;
+}
+
+main h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+main section {
+    display: grid;
+    gap: 12px;
+}
+
+main section input[type="checkbox"] {
+    position: absolute;
+    inset: 0;
+}
+
+main section .card-bg {
+    position: relative;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    cursor: pointer;
+
+}
+
+/* quando o campo estiver checked, o icone ativo irá aparecer */
+main section .card-bg:has(:checked) .ativo, 
+/* por padrão o icone inativo estará aparecendo */
+main section .card-bg .inativo {
+    display: block;
+}
+
+/* quando o campo estiver checked, o icone inativo não irá aparecer */
+main section .card-bg:has(:checked) .inativo, 
+/* por padrão o icone ativo estará escondido */
+main section .card-bg .ativo {
+    display: none;
+}
+
+section .card-bg > div {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+section time {
+    font-size: 14px;
+    color: #A1A1AB;
+    text-align: right;
+}
+
+time.full {
+    display: none
+}
+
 

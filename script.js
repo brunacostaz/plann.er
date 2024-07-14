@@ -1,8 +1,8 @@
 //objet {}
 const atividade = {
-    nome : 'Estudar a beira mar',
-    data : new Date('2024-07-10 07:00'),
-    finalizada: true
+    nome : 'Visitar os Lençóis Maranhenses',
+    data : new Date('2024-07-12 07:30'),
+    finalizada: false
 }
 
 // lista, array, vetor = []
@@ -10,14 +10,14 @@ const atividade = {
 let listaAtividades = [
     atividade,
     {
-        nome: 'Academia',
-        data: new Date('2024-07-13 10:00'),
-        finalizada: false
-    },
-    {
         nome: 'Devocional',
         data: new Date('2024-07-11 08:00'),
-        finalizada: false
+        finalizada: true
+    },
+    {
+        nome : 'Estudar a beira mar',
+        data : new Date('2024-07-10 07:00'),
+        finalizada: true
     }
 ]
 
@@ -54,10 +54,22 @@ const criarItemAtividades = (att) => {
     const formatar = formatador(att.data)
 
     return ` 
-   <div>
+   <div class="card-bg">
         ${input}
+
+        <div>
+        <img src="assets/check-ativo.svg" class="ativo">
+        <img src="assets/check-inativo.svg" class="inativo">
         <span>${att.nome}</span>
-        <time>${formatar.dia.extenso.longo},
+        </div>
+
+        <time class="short">
+        ${formatar.dia.extenso.curto},
+        ${formatar.dia.numerico} <br>
+        ${formatar.hora}
+        </time>
+        <time class="full">
+        ${formatar.dia.extenso.longo},
         dia ${formatar.dia.numerico}
         de ${formatar.mes}
         às ${formatar.hora}
