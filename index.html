@@ -6,38 +6,52 @@
     <link rel="stylesheet" href="style.css">
     <title>plann.er</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
     <script>dayjs.locale('pt-br')</script>
 
 </head>
 <body>
-
-    <form onsubmit="salvarAtividade(event)">
-        <div>
-            <input type="text" placeholder="Qual a atividade?" name="atividade" required>
-        </div>
+    <div id="app">
         
-        <div>
-            <select name="dia">
-                <option value="2024-03-19">19 de março</option>
-            </select>
-        </div>
+        <form onsubmit="salvarAtividade(event)">
+            <div id="viagem" class="card-bg">
+                <img src="assets/destino.svg" alt="ponteiro de destino da viagem">
+                <p>Barreirinhas, MA - Brasil</p>
+            </div>
 
-        <div>
-            <select name="hora">
-                <option value="10:00">10:00</option>
-            </select>
-        </div>
+            <div class="conjunto_campos">
+                <div class="campo">
+                    <img src="assets/etiqueta_atividade.svg" alt="etiqueta para as atividades">
 
-        <button>Salvar atividade</button>
-    </form>
-
-    <main>
-        <h1>Atividades</h1>
-        <section></section>
-        <script src="script.js"></script>
-    </main>
+                    <input type="text" placeholder="Qual a atividade?" name="atividade" required>
+                </div>
+                <div class="campo">
+                    <img src="assets/calendario.svg" alt="calendario">
+                    <select name="dia">
+                        <option value="2024-03-19">19 de março</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <img src="assets/relogio.svg" alt="relogio">
+                    <select name="hora">
+                        <option value="10:00">10:00</option>
+                    </select>
+                </div>
+            </div>
+            <button>Salvar atividade</button>
+        </form>
+        
+        <main>
+            <h1>Atividades</h1>
+            <section></section>
+            <script src="script.js"></script>
+        </main>
+    </div>
 
     
 </body>

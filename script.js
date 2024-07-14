@@ -190,7 +190,7 @@ criarSelecaoHora()
 //função para dar um check ou remover o check e manter a mudança feita nos inputs
 const concluirAtividade = (event) => {
     //o value do input checkbox é a data, pois só é permitido uma atividade por dia e hora, tornando esse valor único para cada input
-    const input = event.target
+    const input = event.target //localiza o input checkbox que foi clicado
     const dataDesseInput = input.value
 
     //estando com o ID do input armazenado, o método find irá procurar na lista de atividades se tem alguma atividade registrada com essa mesma data
