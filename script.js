@@ -165,15 +165,17 @@ const criarSelecaoDias = () => {
 
 criarSelecaoDias()
 
+//função para criar todas as opções de hora, de meia em meia hora
 const criarSelecaoHora = () => {
     let horasDisponiveis = ''
 
     for (let i=5; i < 23; i++) {
         //transformação do i (int) em string para formatar a hora
         //padStart irá preencher o inicio da string i caso ele não tenha 2 caracteres
-        //ou seja, números menores que 10 deverão ser preenchidos com o 0 para que tenha 2 caracteres, deixando o formato da hora em 05:00 
+        //ou seja, números menores que 10 deverão ser preenchidos com o 0 (valor informado) para que tenha 2 caracteres, deixando o formato da hora em 05:00 
         //logo, se for de 10 para cima, não precisará do 0 na frente
         //resultado: numeros < 10 (06:00) | numeros >= 10 (15:00)
+
         const addZeroHora = String(i).padStart(2,'0')
 
         horasDisponiveis += `<option value="${addZeroHora}:00">${addZeroHora}:00</option>`
@@ -184,22 +186,26 @@ const criarSelecaoHora = () => {
 }
 criarSelecaoHora()
 
+
+//função para dar um check ou remover o check e manter a mudança feita nos inputs
 const concluirAtividade = (event) => {
+    //o value do input checkbox é a data, pois só é permitido uma atividade por dia e hora, tornando esse valor único para cada input
     const input = event.target
     const dataDesseInput = input.value
 
-    //nao to entendendo que atividade é essa. O QUE ESTÁ ACONTECENDO NESSA FUNÇÂO?????????????
-    const atividade = listaAtividades.find((atividade) => {
-        return atividade.data == dataDesseInput
+    //estando com o ID do input armazenado, o método find irá procurar na lista de atividades se tem alguma atividade registrada com essa mesma data
+    const checkAtividade = listaAtividades.find((check) => {
+        return check.data == dataDesseInput
     })
 
     //se não encontrar uma atividade com a mesma data do checkbox (valor dele), apenas irá retornar para a execução do código
-    if (!atividade) {
+    if (!checkAtividade) {
         return
     }
 
     //mas se encontrar a atividade com mesma data, significa que o user clicou no checkbox, logo o valor da propriedade finalizada (do objeto atividade) precisa inverter o seu valor
     //se era true, deve virar false. Se era false, deve virar true
     //para isso, usa-se a exclamação (!) que inverte o valor guardado, em boolen, e depois substituiremos na propriedade finalizada
-    atividade.finalizada = !atividade.finalizada
+
+    checkAtividade.finalizada = !checkAtividade.finalizada
 }
