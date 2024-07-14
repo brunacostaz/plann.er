@@ -93,7 +93,14 @@ button {
     font-weight: 500;
 
     cursor: pointer;
+    transition: background 0.2s;
 }
+
+button:hover {
+    background-color: rgb(190, 242, 100, 0.6);
+}
+
+
 
 /* main */
 
@@ -126,6 +133,7 @@ main section .card-bg {
     justify-content: space-between;
     
     cursor: pointer;
+    animation: aparecer 300ms;
 
 }
 
@@ -157,6 +165,39 @@ section time {
 
 time.full {
     display: none
+}
+
+/* animação */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+}
+
+/* responsividade para desktop */
+@media (width > 1024px) {
+    #app {
+        display: flex;
+        max-width: 960px;
+        gap: 32px;
+    }
+
+    main {
+        margin-top: 0;
+        flex: 1;
+    }
+
+    main h1 {
+        text-align: left;
+    }
+
+    time.full {
+        display: block;
+    }
+
+    time.short {
+        display: none;
+    }
 }
 
 
