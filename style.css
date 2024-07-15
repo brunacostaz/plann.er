@@ -34,6 +34,11 @@ html, input, select, button, option{
     margin: auto;
 }
 
+#logo {
+    margin: 0 auto 20px;
+    width: 100px;
+}
+
 /* form - destino da viagem */
 
 #viagem {
@@ -85,7 +90,7 @@ button {
     margin-top: 12px;
     padding: 12px 20px;
     border: none;
-    background-color: #BEF264;
+    background-color: rgb(190, 242, 100);
     border-radius: 8px;
 
     color: #1A2E05;
