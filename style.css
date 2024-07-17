@@ -83,7 +83,7 @@ input, select, button {
 }
 
 .campo:focus-within {
-    outline: 2px solid #BEF264;
+    outline: 2px solid #bef264;
 }
 
 button {
