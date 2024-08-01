@@ -2,7 +2,7 @@
 <img src="assets/logo.svg" align=center> <br><br>
 <img src=".github/mockup-planner.png" align=center>
 
-### Deploy --> <a href="https://brunacostaz.github.io/plann.er/" text-align="center">plann.er</a>
+### Deploy --> <a href="https://brunacostaz.github.io/plann.er/" text-align="center">plann.er 🔗</a>
 </div>
 
 
