@@ -6,7 +6,7 @@
 </div>
 
 
-O plann.er é um planejador de viagens para organizar todas as informações e programações para cada destino, facilitando o acesso rápido para as pessoas e tornando o processo divertido e intuitivo. 
+O plann.er é um planejador de viagens para organizar e acompanhar todas as informações e programações para cada destino, facilitando o acesso rápido para as pessoas e tornando o processo divertido e intuitivo. 
 
 Esse projeto foi proposto pelo evento NLW (Next Level Week) Journay, promovido pela Rocketseat, composto por 10 trilhas de aprendizado em programação. A trilha que eu escolhi foi a de HTML, CSS e JavaScript, para aprofundar e consolidar os meus conhecimentos em CSS e JS. Nessa trilha, desenvolvi a parte destinada a organizar as atividades que o usuário fará em sua viagem. 
 
