@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="50">
+  <style>
+    .lightmode { display: none; }
+    @media (prefers-color-scheme: dark) {
+      .lightmode { display: block; }
+      .darkmode { display: none; }
+    }
+  </style>
+  <image href="../assets/logo_light.svg" x="0" y="0" width="200" height="50" class="lightmode"/>
+  <image href="../assets/logo_dark.svg" x="0" y="0" width="200" height="50" class="darkmode"/>
+</svg>
